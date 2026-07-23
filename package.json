@@ -1,0 +1,28 @@
+{
+  "name": "uncut-engineering",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seowebpixels/uncut-engineering.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/seowebpixels/uncut-engineering/issues"
+  },
+  "homepage": "https://github.com/seowebpixels/uncut-engineering#readme",
+  "dependencies": {
+    "astro": "^7.1.3"
+  }
+}
