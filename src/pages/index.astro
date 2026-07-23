@@ -1,26 +1,21 @@
----
-import { Image } from 'astro:assets';
-import logoImg from '../assets/uncut-logo.png';
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uncut Electro Mechanical Engineering | Industrial Repairs & Condition Monitoring</title>
-    <link rel="stylesheet" href="src/styles/global.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uncut Electro Mechanical Engineering | Industrial Repairs & Condition Monitoring</title>
+  <link rel="stylesheet" href="/src/styles/global.css">
 </head>
 <body>
-
-    <!-- Site Navigation Header -->
-<header class="site-header">
-  <div class="container header-container">
-    <a href="#" class="logo-link">
-      <Image src={logoImg} alt="Uncut Electro Mechanical Engineering Logo" class="site-logo footer-logo-img">
-    </a>
-    <!-- Optional: Add nav links here if you have them, e.g., <nav>...</nav> -->
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#" class="logo-link">
+        <img src="/uncut-logo.png" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo footer-logo-img">
+      </a>
+    </div>
+  </header>
+</body>
+</html>
 
 <!-- Hero Section -->
 <section class="hero-section">
