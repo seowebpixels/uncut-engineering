@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import logoImg from '../assets/uncut-logo.png';
 ---
 <!DOCTYPE html>
@@ -15,7 +16,7 @@ import logoImg from '../assets/uncut-logo.png';
 <header class="site-header">
   <div class="container header-container">
     <a href="#" class="logo-link">
-      <img src={logoImg.src} alt="Uncut Electro Mechanical Engineering Logo" class="site-logo footer-logo-img">
+      <Image src={logoImg} alt="Uncut Electro Mechanical Engineering Logo" class="site-logo footer-logo-img">
     </a>
     <!-- Optional: Add nav links here if you have them, e.g., <nav>...</nav> -->
   </div>
