@@ -31,11 +31,12 @@ const optimizedBg = await getImage({
       --accent: #f97316;
       --accent-hover: #ea580c;
       --text-dark: #1e293b;
-      --text-light: #64748b;
-      --bg-light: #f8fafc;
+      --text-light: #94a3b8;
+      --bg-dark: #090d16;
+      --bg-card: #111827;
       --white: #ffffff;
       --black: #000000;
-      --border: #e2e8f0;
+      --border: #1e293b;
       --font-heading: 'Barlow Condensed', sans-serif;
       --font-sans: 'Plus Jakarta Sans', sans-serif;
     }
@@ -48,8 +49,8 @@ const optimizedBg = await getImage({
 
     body {
       font-family: var(--font-sans);
-      color: var(--text-dark);
-      background-color: var(--white);
+      color: var(--white);
+      background-color: var(--bg-dark);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
@@ -61,10 +62,10 @@ const optimizedBg = await getImage({
       padding: 0 1.5rem;
     }
 
-    /* Header & Logo Fixes */
+    /* Header & Prominent Logo Fix */
     .site-header {
       background: var(--black);
-      padding: 1rem 0;
+      padding: 1.25rem 0;
       border-bottom: 3px solid var(--accent);
     }
 
@@ -75,9 +76,9 @@ const optimizedBg = await getImage({
     }
 
     .site-logo {
-      width: 160px;
+      width: 220px;
       height: auto;
-      max-height: 40px;
+      max-height: 55px;
       object-fit: contain;
       display: block;
     }
@@ -99,7 +100,7 @@ const optimizedBg = await getImage({
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.75) 60%, rgba(15,23,42,0.4) 100%);
+      background: linear-gradient(90deg, rgba(9,13,22,0.95) 0%, rgba(9,13,22,0.82) 60%, rgba(9,13,22,0.5) 100%);
       z-index: 1;
     }
 
@@ -177,10 +178,10 @@ const optimizedBg = await getImage({
       color: var(--primary);
     }
 
-    /* Sections & Headings Color Fix */
+    /* Services Section & 2x2 Grid Layout */
     .services-section {
       padding: 5rem 0;
-      background-color: var(--bg-light);
+      background-color: var(--bg-dark);
     }
 
     .services-section h2, 
@@ -191,7 +192,7 @@ const optimizedBg = await getImage({
       font-family: var(--font-heading);
       font-size: clamp(2rem, 3.5vw, 2.75rem);
       text-transform: uppercase;
-      color: var(--primary);
+      color: var(--white);
       margin-bottom: 0.75rem;
     }
 
@@ -201,34 +202,38 @@ const optimizedBg = await getImage({
       margin-bottom: 3rem;
     }
 
-    /* Grids & Card Interactive Borders */
-    .services-grid, .industries-grid, .workflow-grid, .advantages-grid {
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
 
-    .service-card, .industry-card, .workflow-card, .advantage-card {
-      background: var(--white);
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-card {
+      background: var(--bg-card);
       border-radius: 8px;
       overflow: hidden;
       border: 1px solid var(--border);
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .service-card:hover, .industry-card:hover, .workflow-card:hover, .advantage-card:hover,
-    .service-card:focus-within, .industry-card:focus-within {
+    .service-card:hover, .service-card:focus-within {
       border-color: var(--accent);
-      box-shadow: 0 6px 12px -2px rgba(249, 115, 22, 0.15);
+      box-shadow: 0 6px 12px -2px rgba(249, 115, 22, 0.25);
     }
 
-    /* Image Dimension Controls */
+    /* Fixed Image Sizing */
     .service-image {
       width: 100%;
-      height: 220px;
+      height: 260px;
       overflow: hidden;
-      background: var(--bg-light);
+      background: #000;
     }
 
     .service-image img {
@@ -239,21 +244,21 @@ const optimizedBg = await getImage({
     }
 
     .service-content {
-      padding: 1.5rem;
+      padding: 2rem;
     }
 
-    .service-content h3, .industry-card h3, .workflow-content h3, .advantage-card h3 {
+    .service-content h3 {
       font-family: var(--font-heading);
-      font-size: 1.5rem;
-      color: var(--primary);
+      font-size: 1.75rem;
+      color: var(--white);
       margin-bottom: 0.75rem;
       text-transform: uppercase;
     }
 
-    .service-content p, .industry-card p, .workflow-content p, .advantage-card p {
+    .service-content p {
       color: var(--text-light);
-      font-size: 0.95rem;
-      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .read-more {
@@ -262,12 +267,42 @@ const optimizedBg = await getImage({
       text-decoration: none;
     }
 
+    /* Other Grids */
+    .industries-grid, .workflow-grid, .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
     .industries-section, .workflow-section, .advantages-section {
       padding: 5rem 0;
+      background-color: var(--bg-dark);
     }
 
     .industry-card, .workflow-card, .advantage-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
       padding: 2rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .industry-card:hover, .workflow-card:hover, .advantage-card:hover {
+      border-color: var(--accent);
+    }
+
+    .industry-card h3, .workflow-content h3, .advantage-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .industry-card p, .workflow-content p, .advantage-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
     }
 
     .industry-icon, .advantage-icon {
@@ -278,7 +313,7 @@ const optimizedBg = await getImage({
 
     /* Emergency Banner */
     .emergency-banner-section {
-      background: var(--primary);
+      background: #05080f;
       color: var(--white);
       padding: 4rem 0;
       border-top: 4px solid var(--accent);
@@ -351,7 +386,7 @@ const optimizedBg = await getImage({
     }
 
     .workflow-section {
-      background-color: var(--bg-light);
+      background-color: var(--bg-dark);
     }
 
     .workflow-number {
@@ -370,13 +405,14 @@ const optimizedBg = await getImage({
 
     .workflow-list li {
       font-size: 0.9rem;
-      color: var(--text-dark);
+      color: var(--text-light);
       margin-bottom: 0.5rem;
     }
 
     /* FAQ */
     .faq-section {
       padding: 5rem 0;
+      background-color: var(--bg-dark);
     }
 
     .faq-container {
@@ -385,7 +421,7 @@ const optimizedBg = await getImage({
     }
 
     .faq-item {
-      background: var(--white);
+      background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 6px;
       margin-bottom: 1rem;
@@ -401,7 +437,7 @@ const optimizedBg = await getImage({
       padding: 1.25rem 1.5rem;
       font-family: var(--font-heading);
       font-size: 1.2rem;
-      color: var(--primary);
+      color: var(--white);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -527,7 +563,7 @@ const optimizedBg = await getImage({
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="logo-link">
-        <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo" width="160" height="40">
+        <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo" width="220" height="55">
       </a>
     </div>
   </header>
@@ -545,6 +581,7 @@ const optimizedBg = await getImage({
   </div>
 </section>
 
+<!-- Core Services Section (2x2 Grid Layout) -->
 <section class="services-section" id="services">
   <div class="container">
     <span class="hero-badge">Industrial Solutions Where You Need It Most</span>
@@ -809,7 +846,7 @@ const optimizedBg = await getImage({
     <div class="footer-col footer-brand-col">
       <div class="footer-logo">
         <a href="#" class="logo-link">
-          <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo" width="160" height="40">
+          <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo" width="220" height="55">
         </a>
       </div>
       <p class="footer-bio">
