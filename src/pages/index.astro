@@ -1,11 +1,17 @@
 ---
 import '../styles/global.css';
-import { Image } from 'astro:assets';
-import heroBg from '../assets/high-voltage-transformer.avif';
+import { Image, getImage } from 'astro:assets';
+import rawHeroBg from '../assets/high-voltage-transformer.avif';
 import transformerImg from '../assets/transformer-and-switchgear.png';
 import generatorImg from '../assets/generator-and-substation.png';
 import conditionImg from '../assets/condition-monitoring-two.jpg';
 import motorImg from '../assets/ac-dc-motor-rewinding.png';
+
+const optimizedBg = await getImage({
+  src: rawHeroBg,
+  format: 'avif',
+  quality: 75,
+});
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +38,7 @@ import motorImg from '../assets/ac-dc-motor-rewinding.png';
   </header>
 
 <!-- Hero Section -->
-<section class="hero-section" style={`background-image: url(${heroBg.src});`}>
+<section class="hero-section" style={`background-image: url(${optimizedBg.src});`}>
   <div class="container hero-container">
     <span class="hero-badge">ISO 9001 Aligned • 24/7 Breakdown Support</span>
     <h1>Precision Electro-Mechanical Engineering & Condition Monitoring</h1>
