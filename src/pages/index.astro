@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { Image } from 'astro:assets';
+import heroBg from '../assets/high-voltage-transformer.avif';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -12,13 +14,13 @@ import '../styles/global.css';
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="logo-link">
-        <img src="/uncut-logo.png" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo footer-logo-img" width="180" height="50">
+        <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo footer-logo-img" width="180" height="50">
       </a>
     </div>
   </header>
 
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section" style={`background-image: url(${heroBg.src});`}>
   <div class="container hero-container">
     <span class="hero-badge">ISO 9001 Aligned • 24/7 Breakdown Support</span>
     <h1>Precision Electro-Mechanical Engineering & Condition Monitoring</h1>
@@ -367,7 +369,7 @@ import '../styles/global.css';
     <div class="footer-col footer-brand-col">
       <div class="footer-logo">
         <a href="#" class="logo-link">
-          <img src="/uncut-logo.png" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo footer-logo-img" width="180" height="50">
+          <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo footer-logo-img" width="180" height="50">
         </a>
       </div>
       <p class="footer-bio">
