@@ -78,7 +78,7 @@ const optimizedBg = await getImage({
     .site-logo {
       width: 220px;
       height: auto;
-      max-height: 220px;
+      max-height: 55px;
       object-fit: contain;
       display: block;
     }
@@ -136,7 +136,7 @@ const optimizedBg = await getImage({
     }
 
     .hero-section p {
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      font-size: clamp(1.1rem, 1.5vw, 1.15rem);
       color: #cbd5e1;
       margin-bottom: 2rem;
       line-height: 1.7;
@@ -178,7 +178,7 @@ const optimizedBg = await getImage({
       color: var(--primary);
     }
 
-    /* Services Section & 2x2 Grid Layout */
+    /* Services Section & Constrained 2x2 Grid Layout */
     .services-section {
       padding: 5rem 0;
       background-color: var(--bg-dark);
@@ -200,6 +200,11 @@ const optimizedBg = await getImage({
       color: var(--text-light);
       font-size: 1.1rem;
       margin-bottom: 3rem;
+    }
+
+    .services-grid-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .services-grid {
@@ -228,10 +233,10 @@ const optimizedBg = await getImage({
       box-shadow: 0 6px 12px -2px rgba(249, 115, 22, 0.25);
     }
 
-    /* Fixed Image Sizing */
+    /* Narrower Image Container Height */
     .service-image {
       width: 100%;
-      height: 260px;
+      height: 200px;
       overflow: hidden;
       background: #000;
     }
@@ -244,12 +249,12 @@ const optimizedBg = await getImage({
     }
 
     .service-content {
-      padding: 2rem;
+      padding: 1.75rem;
     }
 
     .service-content h3 {
       font-family: var(--font-heading);
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       color: var(--white);
       margin-bottom: 0.75rem;
       text-transform: uppercase;
@@ -257,8 +262,8 @@ const optimizedBg = await getImage({
 
     .service-content p {
       color: var(--text-light);
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
     }
 
     .read-more {
@@ -563,7 +568,7 @@ const optimizedBg = await getImage({
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="logo-link">
-        <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo" width="220" height="220">
+        <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo" width="220" height="55">
       </a>
     </div>
   </header>
@@ -581,63 +586,65 @@ const optimizedBg = await getImage({
   </div>
 </section>
 
-<!-- Core Services Section (2x2 Grid Layout) -->
+<!-- Core Services Section (Constrained 2x2 Grid Layout) -->
 <section class="services-section" id="services">
   <div class="container">
     <span class="hero-badge">Industrial Solutions Where You Need It Most</span>
     <h2>Our Core Services</h2>
     <p class="section-subtitle">Precision engineering and heavy industrial maintenance solutions.</p>
     
-    <div class="services-grid">
-      
-      <!-- Card 1: Transformers & Switchgears -->
-      <div class="service-card">
-        <div class="service-image">
-          <Image src={transformerImg} alt="Transformers and Switchgears" width={600} height={400} loading="lazy" />
+    <div class="services-grid-wrapper">
+      <div class="services-grid">
+        
+        <!-- Card 1: Transformers & Switchgears -->
+        <div class="service-card">
+          <div class="service-image">
+            <Image src={transformerImg} alt="Transformers and Switchgears" width={600} height={400} loading="lazy" />
+          </div>
+          <div class="service-content">
+            <h3>Transformers & Switchgears</h3>
+            <p>Comprehensive maintenance, testing, and overhaul of heavy-duty power transformers and industrial switchgear systems to guarantee grid stability.</p>
+            <a href="pages/transformers-switchgears.html" class="read-more">Read More &rarr;</a>
+          </div>
         </div>
-        <div class="service-content">
-          <h3>Transformers & Switchgears</h3>
-          <p>Comprehensive maintenance, testing, and overhaul of heavy-duty power transformers and industrial switchgear systems to guarantee grid stability.</p>
-          <a href="pages/transformers-switchgears.html" class="read-more">Read More &rarr;</a>
-        </div>
-      </div>
 
-      <!-- Card 2: Generators & Substations -->
-      <div class="service-card">
-        <div class="service-image">
-          <Image src={generatorImg} alt="Generators and Substations" width={600} height={400} loading="lazy" />
+        <!-- Card 2: Generators & Substations -->
+        <div class="service-card">
+          <div class="service-image">
+            <Image src={generatorImg} alt="Generators and Substations" width={600} height={400} loading="lazy" />
+          </div>
+          <div class="service-content">
+            <h3>Generators & Substations</h3>
+            <p>Expert diagnostics, repairs, and preventative maintenance for industrial diesel generators and high-voltage electrical substation infrastructure.</p>
+            <a href="pages/generators-substations.html" class="read-more">Read More &rarr;</a>
+          </div>
         </div>
-        <div class="service-content">
-          <h3>Generators & Substations</h3>
-          <p>Expert diagnostics, repairs, and preventative maintenance for industrial diesel generators and high-voltage electrical substation infrastructure.</p>
-          <a href="pages/generators-substations.html" class="read-more">Read More &rarr;</a>
-        </div>
-      </div>
 
-      <!-- Card 3: Condition Monitoring -->
-      <div class="service-card">
-        <div class="service-image">
-          <Image src={conditionImg} alt="Condition Monitoring" width={600} height={400} loading="lazy" />
+        <!-- Card 3: Condition Monitoring -->
+        <div class="service-card">
+          <div class="service-image">
+            <Image src={conditionImg} alt="Condition Monitoring" width={600} height={400} loading="lazy" />
+          </div>
+          <div class="service-content">
+            <h3>Condition Monitoring</h3>
+            <p>Advanced predictive maintenance utilizing sensor diagnostics, thermal imaging, and real-time data analysis to prevent unexpected mechanical failures.</p>
+            <a href="pages/condition-monitoring.html" class="read-more">Read More &rarr;</a>
+          </div>
         </div>
-        <div class="service-content">
-          <h3>Condition Monitoring</h3>
-          <p>Advanced predictive maintenance utilizing sensor diagnostics, thermal imaging, and real-time data analysis to prevent unexpected mechanical failures.</p>
-          <a href="pages/condition-monitoring.html" class="read-more">Read More &rarr;</a>
-        </div>
-      </div>
 
-      <!-- Card 4: AC & DC Motor Rewinding -->
-      <div class="service-card">
-        <div class="service-image">
-          <Image src={motorImg} alt="AC and DC Motor Rewinding" width={600} height={400} loading="lazy" />
+        <!-- Card 4: AC & DC Motor Rewinding -->
+        <div class="service-card">
+          <div class="service-image">
+            <Image src={motorImg} alt="AC and DC Motor Rewinding" width={600} height={400} loading="lazy" />
+          </div>
+          <div class="service-content">
+            <h3>AC & DC Motor Rewinding</h3>
+            <p>Precision mechanical overhaul, copper rewinding, and dynamic balancing for industrial AC and DC motors to restore peak operating efficiency.</p>
+            <a href="pages/motor-rewinding.html" class="read-more">Read More &rarr;</a>
+          </div>
         </div>
-        <div class="service-content">
-          <h3>AC & DC Motor Rewinding</h3>
-          <p>Precision mechanical overhaul, copper rewinding, and dynamic balancing for industrial AC and DC motors to restore peak operating efficiency.</p>
-          <a href="pages/motor-rewinding.html" class="read-more">Read More &rarr;</a>
-        </div>
-      </div>
 
+      </div>
     </div>
   </div>
 </section>
@@ -846,7 +853,7 @@ const optimizedBg = await getImage({
     <div class="footer-col footer-brand-col">
       <div class="footer-logo">
         <a href="#" class="logo-link">
-          <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo" width="220" height="220">
+          <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo" width="220" height="55">
         </a>
       </div>
       <p class="footer-bio">
