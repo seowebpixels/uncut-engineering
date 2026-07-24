@@ -21,10 +21,32 @@ const optimizedBg = await getImage({
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Uncut Electro Mechanical Engineering | Industrial Repairs & Condition Monitoring</title>
-
+  
   <!-- Preload the Hero LCP Background Image -->
   <link rel="preload" as="image" href={optimizedBg.src} type="image/avif" fetchpriority="high" />
-  
+
+  <!-- Inline Critical Above-the-Fold CSS to eliminate network chaining -->
+  <style>
+    :root{--primary:#0f172a;--accent:#f97316;--accent-hover:#ea580c;--text-dark:#1e293b;--text-light:#64748b;--bg-light:#f8fafc;--white:#ffffff;--border:#e2e8f0;--font-heading:'Barlow Condensed',sans-serif;--font-sans:'Plus Jakarta Sans',sans-serif}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-sans);color:var(--text-dark);background-color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .container{width:100%;max-width:1280px;margin:0 auto;padding:0 1.5rem}
+    .site-header{background:var(--primary);padding:1rem 0;border-bottom:3px solid var(--accent)}
+    .header-container{display:flex;align-items:center;justify-content:space-between}
+    .site-logo{height:auto;max-height:45px;display:block}
+    .hero-section{position:relative;background-size:cover;background-position:center;padding:7rem 0 6rem;color:var(--white);text-align:left}
+    .hero-section::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,rgba(15,23,42,0.92) 0%,rgba(15,23,42,0.75) 60%,rgba(15,23,42,0.4) 100%);z-index:1}
+    .hero-container{position:relative;z-index:2;max-width:800px;margin:0 auto 0 0}
+    .hero-badge{display:inline-block;background:var(--accent);color:var(--white);font-family:var(--font-heading);font-size:0.95rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:0.35rem 0.85rem;border-radius:4px;margin-bottom:1.25rem}
+    .hero-section h1{font-family:var(--font-heading);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;line-height:1.1;text-transform:uppercase;margin-bottom:1.25rem;letter-spacing:0.5px}
+    .hero-section p{font-size:clamp(1rem,1.5vw,1.15rem);color:#cbd5e1;margin-bottom:2rem;line-height:1.7}
+    .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}
+    .btn-primary{background:var(--accent);color:var(--white);padding:0.85rem 1.75rem;font-weight:600;border-radius:4px;text-decoration:none;transition:background 0.2s}
+    .btn-primary:hover{background:var(--accent-hover)}
+    .btn-secondary{background:transparent;color:var(--white);border:2px solid var(--white);padding:0.85rem 1.75rem;font-weight:600;border-radius:4px;text-decoration:none;transition:all 0.2s}
+    .btn-secondary:hover{background:var(--white);color:var(--primary)}
+  </style>
+
   <!-- Optimized Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
