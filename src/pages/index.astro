@@ -21,6 +21,9 @@ const optimizedBg = await getImage({
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Uncut Electro Mechanical Engineering | Industrial Repairs & Condition Monitoring</title>
+
+  <!-- Preload the Hero LCP Background Image -->
+  <link rel="preload" as="image" href={optimizedBg.src} type="image/avif" fetchpriority="high" />
   
   <!-- Optimized Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
