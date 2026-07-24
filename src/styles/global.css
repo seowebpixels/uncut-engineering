@@ -1,6 +1,3 @@
-/* Import Google Fonts for industrial typography */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
-
 :root {
   --bg-dark: #121417;
   --surface-dark: #181b20;
