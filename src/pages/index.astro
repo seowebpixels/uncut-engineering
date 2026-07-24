@@ -2,6 +2,10 @@
 import '../styles/global.css';
 import { Image } from 'astro:assets';
 import heroBg from '../assets/high-voltage-transformer.avif';
+import transformerImg from '../assets/transformer-and-switchgear.png';
+import generatorImg from '../assets/generator-and-substation.png';
+import conditionImg from '../assets/condition-monitoring-two.jpg';
+import motorImg from '../assets/ac-dc-motor-rewinding.png';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +55,7 @@ import heroBg from '../assets/high-voltage-transformer.avif';
           <!-- Card 1: Transformers & Switchgears -->
           <div class="service-card horizontal-card">
             <div class="service-image">
-              <img src="/src/assets/transformer-and-switchgear.png" alt="Transformers and Switchgears" loading="lazy" width="600" height="400">
+              <Image src={transformerImg} alt="Transformers and Switchgears" loading="lazy" width="600" height="400">
             </div>
             <div class="service-content">
               <h3>Transformers & Switchgears</h3>
@@ -63,7 +67,7 @@ import heroBg from '../assets/high-voltage-transformer.avif';
           <!-- Card 2: Generators & Substations -->
           <div class="service-card horizontal-card">
             <div class="service-image">
-              <img src="/src/assets/generator-and-substation.png" alt="Generators and Substations" loading="lazy" width="600" height="400">
+              <Image src={generatorImg} alt="Generators and Substations" loading="lazy" width="600" height="400">
             </div>
             <div class="service-content">
               <h3>Generators & Substations</h3>
@@ -75,7 +79,7 @@ import heroBg from '../assets/high-voltage-transformer.avif';
           <!-- Card 3: Condition Monitoring -->
           <div class="service-card horizontal-card">
             <div class="service-image">
-              <img src="/src/assets/condition-monitoring-two.jpg" alt="Condition Monitoring" loading="lazy" width="600" height="400">
+              <Image src={conditionImg} alt="Condition Monitoring" loading="lazy" width="600" height="400">
             </div>
             <div class="service-content">
               <h3>Condition Monitoring</h3>
@@ -87,7 +91,7 @@ import heroBg from '../assets/high-voltage-transformer.avif';
           <!-- Card 4: AC & DC Motor Rewinding -->
           <div class="service-card horizontal-card">
             <div class="service-image">
-              <img src="/src/assets/ac-dc-motor-rewinding.png" alt="AC and DC Motor Rewinding" loading="lazy" width="600" height="400">
+              <Image src={motorImg} alt="AC and DC Motor Rewinding" loading="lazy" width="600" height="400">
             </div>
             <div class="service-content">
               <h3>AC & DC Motor Rewinding</h3>
